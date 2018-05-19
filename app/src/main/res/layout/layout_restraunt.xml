@@ -30,20 +30,24 @@
             android:textColor="@color/colorPrimaryDark"
             android:textSize="@dimen/text_small"
             tools:text="Аделя Кутуя ул., 16 " />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_small"
             android:textColor="@color/colorBlack"
             android:text="@string/working_hours"/>
-<HorizontalScrollView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_small"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="left">
 
             <TextView
                 android:id="@+id/tv_1"
@@ -52,7 +56,7 @@
                 android:layout_marginLeft="@dimen/margin_medium"
                 android:layout_marginRight="@dimen/margin_medium"
                 android:textColor="@color/colorBlack"
-                android:text="@string/monday"/>
+                android:text="@string/monday" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -81,6 +85,7 @@
                 android:layout_toRightOf="@id/tv_1"
                 android:layout_below="@id/tv_2"
                 android:text="10-18"/>
+
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
@@ -97,18 +102,21 @@
                 android:layout_marginRight="@dimen/margin_large"
                 android:textColor="@color/colorBlack"
                 android:text="@string/wednesday"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/tv_2"
                 android:layout_below="@id/tv_3"
                 android:text="10-18"/>
+
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="@dimen/margin_medium"
                 android:src="@drawable/line"
                 android:layout_toRightOf="@id/tv_2"/>
+
             <TextView
                 android:id="@+id/tv_4"
                 android:layout_width="wrap_content"
@@ -118,18 +126,21 @@
                 android:layout_marginRight="@dimen/margin_large"
                 android:textColor="@color/colorBlack"
                 android:text="@string/thursday"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/tv_3"
                 android:layout_below="@id/tv_4"
                 android:text="10-18"/>
+
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="@dimen/margin_medium"
                 android:src="@drawable/line"
                 android:layout_toRightOf="@id/tv_3"/>
+
             <TextView
                 android:id="@+id/tv_5"
                 android:layout_width="wrap_content"
@@ -139,18 +150,21 @@
                 android:layout_marginRight="@dimen/margin_large"
                 android:textColor="@color/colorBlack"
                 android:text="@string/friday"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/tv_4"
                 android:layout_below="@id/tv_5"
                 android:text="10-18"/>
+
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="@dimen/margin_medium"
                 android:src="@drawable/line"
                 android:layout_toRightOf="@id/tv_4"/>
+
             <TextView
                 android:id="@+id/tv_6"
                 android:layout_width="wrap_content"
@@ -160,18 +174,21 @@
                 android:layout_marginRight="@dimen/margin_xlarge"
                 android:textColor="@color/colorBlack"
                 android:text="@string/saturday"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/tv_5"
                 android:layout_below="@id/tv_6"
                 android:text="10-18"/>
+
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="@dimen/margin_medium"
                 android:src="@drawable/line"
                 android:layout_toRightOf="@id/tv_5"/>
+
             <TextView
                 android:id="@+id/tv_7"
                 android:layout_width="wrap_content"
@@ -179,6 +196,7 @@
                 android:layout_toRightOf="@id/tv_6"
                 android:textColor="@color/colorBlack"
                 android:text="@string/sunday"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -187,12 +205,106 @@
                 android:layout_below="@id/tv_7"
                 android:text="10-18"/>
 
-
-
-
-
         </RelativeLayout>
-</HorizontalScrollView>
+        </HorizontalScrollView>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium">
+
+                <ImageView
+                    android:id="@+id/iv_average_bill"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ryblgrey" />
+                <ImageView
+                    android:id="@+id/iv_kitchen"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_toRightOf="@id/iv_average_bill"
+                    android:src="@drawable/ryblgrey" />
+                <ImageView
+                    android:id="@+id/iv_kitchen_2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_toRightOf="@id/iv_kitchen"
+                    android:src="@drawable/ryblgrey" />
+                <ImageView
+                    android:id="@+id/iv_buisness_lunch"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_toRightOf="@id/iv_kitchen_2"
+                    android:src="@drawable/ryblgrey" />
+                <ImageView
+                    android:id="@+id/iv_live_music"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_toRightOf="@id/iv_buisness_lunch"
+                    android:src="@drawable/ryblyellow" />
+                <ImageView
+                    android:id="@+id/iv_summer_place"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ryblgrey" />
+                <ImageView
+                    android:id="@+id/iv_bar_map"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_toRightOf="@id/iv_summer_place"
+                    android:src="@drawable/ryblgrey" />
+                <ImageView
+                    android:id="@+id/iv_club"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_toRightOf="@id/iv_bar_map"
+                    android:src="@drawable/ryblgrey" />
+                <ImageView
+                    android:id="@+id/iv_dance"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_toRightOf="@id/iv_club"
+                    android:src="@drawable/ryblgrey" />
+                <ImageView
+                    android:id="@+id/iv_snack"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_toRightOf="@id/iv_dance"
+                    android:src="@drawable/ryblyellow" />
+                <ImageView
+                    android:id="@+id/iv_hookah"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_toRightOf="@id/iv_snack"
+                    android:src="@drawable/ryblgrey" />
+            </RelativeLayout>
+        </HorizontalScrollView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lorem_ipsum"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_large"
+            android:text="Фото"/>
+
+        <LinearLayout
+            android:id="@+id/ll_photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+
+
 
         <ProgressBar
             android:id="@+id/progress_loader"

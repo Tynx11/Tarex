@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    >
+    android:fitsSystemWindows="true">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/ab_restaraunt"
@@ -41,5 +40,9 @@
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/layout_restraunt"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"/>
 
 </android.support.design.widget.CoordinatorLayout>
