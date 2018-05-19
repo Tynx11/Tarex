@@ -21,6 +21,7 @@ android {
 ext {
     support = "27.0.2"
     roundedImageView = "2.3.0"
+    calligraphy = "2.3.0"
 }
 
 dependencies {
@@ -33,7 +34,10 @@ dependencies {
     implementation "com.android.support:cardview-v7:${support}"
 
     // CircleImageView
-    implementation "com.makeramen:roundedimageview:${ roundedImageView}"
+    implementation "com.makeramen:roundedimageview:${roundedImageView}"
+
+    //calligraphy
+    implementation "uk.co.chrisjenx:calligraphy:${calligraphy}"
 
 
 
