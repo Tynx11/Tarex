@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Tarex</string>
+    <string name="lorem_ipsum">Lorem ipsum dolar sit amet, consectetur adiping elit.</string>
+    <string name="name_restaraunt">HUMO Chaihona restaraunt</string>
+    <string name="title_description">Description</string>
+    <string name="working_hours">Часы работы</string>
+    <string name="monday">Пн</string>
+    <string name="tuesday">Вт</string>
+    <string name="wednesday">Ср</string>
+    <string name="thursday">Чт</string>
+    <string name="friday">Пт</string>
+    <string name="saturday">Сб</string>
+    <string name="sunday">Вс</string>
 </resources>
