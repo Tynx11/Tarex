@@ -19,4 +19,5 @@ public interface UserView extends MvpView {
     @StateStrategyType(AddToEndSingleStrategy.class)
     void setAccessToken(String tokenDto);
 
+    void getSpToken (String token);
 }

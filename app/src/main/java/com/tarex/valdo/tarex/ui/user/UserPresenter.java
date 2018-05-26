@@ -11,6 +11,7 @@ import com.tarex.valdo.tarex.forms.LoginForm;
 import com.tarex.valdo.tarex.model.user.UserResponse;
 import com.tarex.valdo.tarex.model.user.tokenDto.TokenDto;
 import com.tarex.valdo.tarex.utils.RxUtils;
+import com.tarex.valdo.tarex.utils.prefs.AppPreferencesHelper;
 
 import io.reactivex.Single;
 
@@ -33,6 +34,16 @@ public class UserPresenter extends MvpPresenter<UserView> {
                     Log.d("PRESENTER", "token: " + token);
                     getViewState().setAccessToken(token);
                 }, error-> getViewState().handleError(error));
+    }
+
+    public void createSharedPreferences (Context context,String token) {
+        String nameSharedPreferences = "shPref";
+        AppPreferencesHelper appPreferencesHelper =
+                new AppPreferencesHelper(context,nameSharedPreferences);
+        if (token != null)
+        appPreferencesHelper.setAccessToken(token);
+        getViewState().getSpToken(appPreferencesHelper.getAccessToken());
+
     }
 
 }

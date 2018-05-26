@@ -12,4 +12,6 @@
     <string name="saturday">Сб</string>
     <string name="sunday">Вс</string>
     <string name="lorem_ipsum_big">Lorem ipsum dolor sit amet, ad doctus audire vulputate usu. Et accusam electram mediocritatem mea. Ea aeterno appetere mediocrem sed. In eros facer apeirian vim, ad vel enim perpetua. Ad enim partiendo nam, quodsi similique eu vel. No vix justo tempor accumsan, ei civibus dissentiunt vel, pro no facete delicata. Regione disputationi mea no, pri movet copiosae dissentiet ea. Eum id hinc suavitate, accusamus adolescens temporibus ad vel.</string>
+    <string name="loginWithoutAuth">Войти без авторизации</string>
+    <string name="login">Вход</string>
 </resources>
