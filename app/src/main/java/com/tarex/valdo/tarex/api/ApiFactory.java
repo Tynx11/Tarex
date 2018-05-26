@@ -20,19 +20,7 @@ public final class ApiFactory {
     private ApiFactory () {
     }
 
-    @NonNull
-    public static RestaurantService getRestaurantService() {
-        RestaurantService service = restaurantService;
-        if (service == null) {
-            synchronized (ApiFactory.class) {
-                service = restaurantService;
-                if (service == null) {
-                    service = restaurantService = buildRetrofit().create(RestaurantService.class);
-                }
-            }
-        }
-        return service;
-    }
+
 
     @NonNull
     public static UserService getUserService() {
@@ -86,6 +74,20 @@ public final class ApiFactory {
 
     public static void setUsersService(UserService userService) {
         ApiFactory.userService = userService;
+    }
+
+    @NonNull
+    public static RestaurantService getRestaurantService() {
+        RestaurantService service = restaurantService;
+        if (service == null) {
+            synchronized (ApiFactory.class) {
+                service = restaurantService;
+                if (service == null) {
+                    service = restaurantService = buildRetrofit().create(RestaurantService.class);
+                }
+            }
+        }
+        return service;
     }
 
 

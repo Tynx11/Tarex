@@ -15,7 +15,7 @@
         android:layout_height="200dp"
         android:layout_marginTop="@dimen/margin_medium"
         app:cardCornerRadius="@dimen/card_small"
-        app:cardElevation="@dimen/card_medium">
+        app:cardElevation="@dimen/card_small">
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/iv_restaraunt"
@@ -84,6 +84,8 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="@dimen/margin_medium"
                 android:src="@drawable/ryblgrey"/>
+
+
 
         </LinearLayout>
 

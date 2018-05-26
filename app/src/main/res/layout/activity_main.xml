@@ -25,7 +25,7 @@
         android:id="@+id/btn_go"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Давай Сука"
+        android:text="Давай"
         android:layout_gravity="bottom"/>
 
 </LinearLayout>

@@ -19,52 +19,35 @@ import io.reactivex.Single;
 
 public class UserActivity extends BaseActivity implements UserView {
 
-
-
     EditText login;
     EditText password;
 
     Button go;
 
-    @InjectPresenter(type = PresenterType.WEAK)
+    @InjectPresenter
     UserPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         login = findViewById(R.id.login);
         password = findViewById(R.id.password);
         go = findViewById(R.id.btn_go);
 
-        go.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                user(new LoginForm(login.getText().toString(),password.getText().toString()));
-            }
-        });
+        go.setOnClickListener(view ->
+                presenter.user(login.getText().toString(),password.getText().toString()));
     }
-    @Override
-    public void user(LoginForm loginForm) {
-        presenter.user(loginForm);
-    }
-
 
     @Override
     public void handleError(Throwable error) {
 
     }
-
-
-
-
-    public void getAccesToken() {
-
-    }
-
+    
     @Override
-    public void setAccessToken(TokenDto accessToken) {
-        Log.d("LOG!",accessToken.getValue());
+    public void setAccessToken(String accessToken) {
+        Log.d("LOG!",accessToken);
     }
 
 
