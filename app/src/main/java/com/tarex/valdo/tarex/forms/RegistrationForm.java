@@ -1,22 +1,26 @@
 package com.tarex.valdo.tarex.forms;
 
+import com.google.gson.annotations.SerializedName;
+
 public class RegistrationForm {
 
     private String login;
 
     private String password;
 
-    private String firstname;
+    @SerializedName("first_name")
+    private String first_name;
 
-    private String surname;
+    @SerializedName("last_name")
+    private String last_name;
 
     private String phoneNumber;
 
-    public RegistrationForm(String login, String password, String firstname, String surname, String phoneNumber) {
+    public RegistrationForm(String login, String password, String first_name, String last_name, String phoneNumber) {
         this.login = login;
         this.password = password;
-        this.firstname = firstname;
-        this.surname = surname;
+        this.first_name = first_name;
+        this.last_name = last_name;
         this.phoneNumber = phoneNumber;
     }
 
@@ -36,20 +40,20 @@ public class RegistrationForm {
         this.password = password;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getFirst_name() {
+        return first_name;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getLast_name() {
+        return last_name;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
     }
 
     public String getPhoneNumber() {
