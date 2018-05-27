@@ -1,20 +1,17 @@
-package com.tarex.valdo.tarex.ui.restaurantList;
-
-import android.support.annotation.NonNull;
+package com.tarex.valdo.tarex.ui.registration;
 
 import com.arellomobile.mvp.MvpView;
 import com.arellomobile.mvp.viewstate.strategy.AddToEndSingleStrategy;
 import com.arellomobile.mvp.viewstate.strategy.OneExecutionStateStrategy;
 import com.arellomobile.mvp.viewstate.strategy.StateStrategyType;
-import com.tarex.valdo.tarex.model.restaurant.Restaurant;
 
-import java.util.List;
-
-@StateStrategyType(AddToEndSingleStrategy.class)
-public interface RestaurantListView extends MvpView {
-
-    void showItems(@NonNull List<Restaurant> items);
+public interface RegistrationView extends MvpView {
 
     @StateStrategyType(OneExecutionStateStrategy.class)
     void handleError(Throwable error);
+
+    @StateStrategyType(AddToEndSingleStrategy.class)
+    void setAccessToken(String tokenDto);
+
+    void getSpToken (String token);
 }

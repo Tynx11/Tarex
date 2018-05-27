@@ -12,8 +12,8 @@ import retrofit2.http.POST;
 
 public interface RestaurantService {
 
-    @POST("restaurant")
-   Single<RestaurantResponse> restaurantList();
+    @GET("restaurant")
+    Single<RestaurantResponse> restaurantList();
 
 //    @GET("")
 //    Observable<RestaurantResponse> restaurant(@Body );

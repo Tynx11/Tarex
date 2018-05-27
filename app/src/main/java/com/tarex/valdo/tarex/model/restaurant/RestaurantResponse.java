@@ -11,6 +11,7 @@ import io.realm.annotations.PrimaryKey;
 
 public class RestaurantResponse extends RealmObject {
 
+    @SerializedName("restaurants")
     private RealmList<Restaurant> restaurant;
 
     public RealmList<Restaurant> getRestaurant() {

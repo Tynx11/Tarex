@@ -1,5 +1,6 @@
 package com.tarex.valdo.tarex.ui.user;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,16 +12,18 @@ import android.widget.Toast;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.tarex.valdo.tarex.R;
 import com.tarex.valdo.tarex.ui.base.BaseActivity;
+import com.tarex.valdo.tarex.ui.registration.RegistrationActivity;
+import com.tarex.valdo.tarex.ui.restaurantList.RestautantListActivity;
 
 public class UserActivity extends BaseActivity implements UserView {
 
-    EditText etLogin;
-    EditText etPassword;
+    private EditText etLogin;
+    private EditText etPassword;
 
-    TextView tvLoginWithoutAuth;
-    TextView tvRegistration;
+    private TextView tvLoginWithoutAuth;
+    private TextView tvRegistration;
 
-    Button btnLogin;
+    private Button btnLogin;
 
     @InjectPresenter
     UserPresenter presenter;
@@ -40,14 +43,16 @@ public class UserActivity extends BaseActivity implements UserView {
         tvLoginWithoutAuth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO: 5/27/2018 кидаем на активити со списком ресторанов
+                Intent intent = new Intent(UserActivity.this, RestautantListActivity.class);
+                startActivity(intent);
             }
         });
 
         tvRegistration.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO: 5/27/2018 кидаем на регистрацию
+                Intent intent = new Intent(UserActivity.this, RegistrationActivity.class);
+                startActivity(intent);
             }
         });
 

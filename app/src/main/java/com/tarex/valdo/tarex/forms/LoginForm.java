@@ -1,6 +1,7 @@
 package com.tarex.valdo.tarex.forms;
 
 public class LoginForm {
+
     private String login;
     private String password;
 
