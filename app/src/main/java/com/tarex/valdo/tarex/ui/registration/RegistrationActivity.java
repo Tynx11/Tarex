@@ -1,5 +1,6 @@
 package com.tarex.valdo.tarex.ui.registration;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +10,7 @@ import android.widget.Toast;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.tarex.valdo.tarex.R;
 import com.tarex.valdo.tarex.ui.base.BaseActivity;
+import com.tarex.valdo.tarex.ui.user.UserActivity;
 
 public class RegistrationActivity extends BaseActivity implements RegistrationView {
 
@@ -35,7 +37,10 @@ public class RegistrationActivity extends BaseActivity implements RegistrationVi
                 if (getLogin() != null && getPassword() != null && getName() != null
                         && getSurname() != null && getPhoneNumber() != null){
                     presenter.registraion(getLogin(),getPassword(),getName(),getSurname(),getPhoneNumber());
+
             }
+                Intent intent = new Intent(RegistrationActivity.this, UserActivity.class);
+                startActivity(intent);
                 }
         });
 

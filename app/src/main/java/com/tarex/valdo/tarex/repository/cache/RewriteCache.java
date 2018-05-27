@@ -25,7 +25,7 @@ public class RewriteCache<T extends RealmObject> implements Function<List<T>, Si
     public Single<List<T>> apply(@io.reactivex.annotations.NonNull List<T> elements) throws Exception {
         Realm.getDefaultInstance().executeTransaction(realm -> {
             realm.delete(mClass);
-            realm.insert(elements);
+            realm.insertOrUpdate(elements);
         });
         return Single.just(elements);
     }

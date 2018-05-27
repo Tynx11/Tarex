@@ -24,7 +24,7 @@
             tools:text="@string/name_restaraunt"/>
 
         <TextView
-            android:id="@+id/tv_description_details_restaraunt"
+            android:id="@+id/tv_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimaryDark"
@@ -40,7 +40,8 @@
 
         <HorizontalScrollView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -59,6 +60,7 @@
                 android:text="@string/monday" />
 
             <TextView
+                android:id="@+id/tv_monday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_1"
@@ -79,7 +81,9 @@
                 android:layout_marginRight="@dimen/margin_large"
                 android:textColor="@color/colorBlack"
                 android:text="@string/tuesday"/>
+
             <TextView
+                android:id="@+id/tv_tuesday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/tv_1"
@@ -104,6 +108,7 @@
                 android:text="@string/wednesday"/>
 
             <TextView
+                android:id="@+id/tv_wedensday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/tv_2"
@@ -128,6 +133,7 @@
                 android:text="@string/thursday"/>
 
             <TextView
+                android:id="@+id/tv_thursday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/tv_3"
@@ -135,6 +141,7 @@
                 android:text="10-18"/>
 
             <ImageView
+                android:id="@+id/suturday"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="@dimen/margin_medium"
@@ -152,6 +159,7 @@
                 android:text="@string/friday"/>
 
             <TextView
+                android:id="@+id/tv_friday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/tv_4"
@@ -176,6 +184,7 @@
                 android:text="@string/saturday"/>
 
             <TextView
+                android:id="@+id/tv_saturday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/tv_5"
@@ -198,6 +207,7 @@
                 android:text="@string/sunday"/>
 
             <TextView
+                android:id="@+id/tv_sunday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="-4dp"
@@ -212,7 +222,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_medium">
@@ -221,31 +231,36 @@
                     android:id="@+id/iv_average_bill"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/ryblgrey" />
+                    android:src="@drawable/ryblgrey"
+                    android:layout_centerHorizontal="true"/>
                 <ImageView
                     android:id="@+id/iv_kitchen"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_toRightOf="@id/iv_average_bill"
-                    android:src="@drawable/ryblgrey" />
+                    android:src="@drawable/ryblgrey"
+                    android:layout_centerHorizontal="true"/>
                 <ImageView
                     android:id="@+id/iv_kitchen_2"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_toRightOf="@id/iv_kitchen"
-                    android:src="@drawable/ryblgrey" />
+                    android:src="@drawable/ryblgrey"
+                    android:layout_centerHorizontal="true"/>
                 <ImageView
                     android:id="@+id/iv_buisness_lunch"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_toRightOf="@id/iv_kitchen_2"
-                    android:src="@drawable/ryblgrey" />
+                    android:src="@drawable/ryblgrey"
+                    android:layout_centerHorizontal="true"/>
                 <ImageView
                     android:id="@+id/iv_live_music"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_toRightOf="@id/iv_buisness_lunch"
-                    android:src="@drawable/ryblyellow" />
+                    android:src="@drawable/ryblyellow"
+                    />
                 <ImageView
                     android:id="@+id/iv_summer_place"
                     android:layout_width="50dp"
@@ -281,10 +296,11 @@
                     android:layout_height="50dp"
                     android:layout_toRightOf="@id/iv_snack"
                     android:src="@drawable/ryblgrey" />
-            </RelativeLayout>
+            </LinearLayout>
         </HorizontalScrollView>
 
         <TextView
+            android:id="@+id/tv_description_details_restaraunt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/lorem_ipsum"/>

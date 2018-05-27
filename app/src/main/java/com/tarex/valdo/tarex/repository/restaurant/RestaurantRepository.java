@@ -15,5 +15,5 @@ public interface RestaurantRepository {
     @NonNull
     Single<List<Restaurant>> restaurantList();
 
-    Single<Restaurant> restaurant ();
+    Single<Restaurant> restaurant (Long id);
 }

@@ -24,8 +24,17 @@ public class UserActivity extends BaseActivity implements UserView {
 
     private Button btnLogin;
 
+    private String shName = "shPref";
+
     @InjectPresenter
     UserPresenter presenter;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (presenter.getAccesToken(this,shName) != null);
+        restarauntIntent();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,16 +43,17 @@ public class UserActivity extends BaseActivity implements UserView {
         initView();
 
         btnLogin.setOnClickListener(view -> {
-            if (etLogin.getText() != null && etPassword != null)
+            if (etLogin.getText() != null && etPassword != null) {
                 presenter.user(etLogin.getText().toString(), etPassword.getText().toString());
+                restarauntIntent();
+            }
 
         });
 
         tvLoginWithoutAuth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(UserActivity.this, RestaurantListActivity.class);
-                startActivity(intent);
+                restarauntIntent();
             }
         });
 
@@ -80,6 +90,13 @@ public class UserActivity extends BaseActivity implements UserView {
         btnLogin = findViewById(R.id.btn_login);
         tvLoginWithoutAuth = findViewById(R.id.tv_login_without_auth);
         tvRegistration = findViewById(R.id.tv_registration);
+    }
+
+    private void restarauntIntent (){
+        Intent intent = new Intent(UserActivity.this, RestaurantListActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
     }
 
 

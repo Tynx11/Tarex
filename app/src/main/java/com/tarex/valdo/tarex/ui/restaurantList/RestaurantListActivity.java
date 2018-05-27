@@ -13,6 +13,7 @@ import com.tarex.valdo.tarex.R;
 import com.tarex.valdo.tarex.model.restaurant.Restaurant;
 import com.tarex.valdo.tarex.ui.base.BaseActivity;
 import com.tarex.valdo.tarex.ui.base.BaseAdapter;
+import com.tarex.valdo.tarex.ui.restaraunt.RestaurantActivity;
 import com.tarex.valdo.tarex.widget.EmptyStateRecyclerView;
 
 import java.util.ArrayList;
@@ -28,6 +29,12 @@ public class RestaurantListActivity extends BaseActivity implements RestaurantLi
     private RestaurantAdapter adapter;
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        presenter.loadRestaurant();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant_list);
@@ -36,6 +43,7 @@ public class RestaurantListActivity extends BaseActivity implements RestaurantLi
 
     @Override
     public void onItemClick(@NonNull Restaurant item) {
+        presenter.onItemClick(item);
     }
 
     @Override
@@ -49,6 +57,12 @@ public class RestaurantListActivity extends BaseActivity implements RestaurantLi
         Log.e("Alm", error.getMessage());
         error.printStackTrace();
     }
+
+    @Override
+    public void showDetails(Restaurant item) {
+        RestaurantActivity.start(this, item);
+    }
+
     private void initRecycler() {
         recyclerView = findViewById(R.id.rv);
         adapter = new RestaurantAdapter(new ArrayList<>());

@@ -6,6 +6,7 @@ import com.tarex.valdo.tarex.api.ApiFactory;
 import com.tarex.valdo.tarex.model.restaurant.Restaurant;
 import com.tarex.valdo.tarex.model.restaurant.RestaurantResponse;
 import com.tarex.valdo.tarex.repository.cache.ErrorReadFromCache;
+import com.tarex.valdo.tarex.repository.cache.ErrorSingleReadFromCache;
 import com.tarex.valdo.tarex.repository.cache.RewriteCache;
 import com.tarex.valdo.tarex.utils.RxUtils;
 
@@ -28,8 +29,13 @@ public class RestaurantRepositoryImpl implements RestaurantRepository {
     }
 
     @Override
-    public Single<Restaurant> restaurant() {
-        return null;
+    public Single<Restaurant> restaurant(final Long id) {
+        return ApiFactory.getRestaurantService()
+                .restaurant(id)
+                .map(RestaurantResponse::getRestaurants)
+                .map(c -> c.get(0))
+                .onErrorResumeNext(new ErrorSingleReadFromCache<>(Restaurant.class,id))
+                .compose(RxUtils.asyncSingle());
     }
 
 }

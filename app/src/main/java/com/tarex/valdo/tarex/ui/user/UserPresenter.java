@@ -46,4 +46,9 @@ public class UserPresenter extends MvpPresenter<UserView> {
 
     }
 
+    public String getAccesToken (Context context,String namePrefs) {
+    AppPreferencesHelper appPreferencesHelper = new AppPreferencesHelper(context,namePrefs);
+    return appPreferencesHelper.getAccessToken();
+    }
+
 }

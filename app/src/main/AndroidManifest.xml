@@ -28,6 +28,8 @@
             android:name=".ui.restaurantList.RestaurantListActivity">
         </activity>
 
+        <activity android:name=".ui.restaraunt.RestaurantActivity" ></activity>
+
     </application>
 
 </manifest>

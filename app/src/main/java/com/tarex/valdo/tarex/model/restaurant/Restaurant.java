@@ -1,9 +1,7 @@
 package com.tarex.valdo.tarex.model.restaurant;
 
 import com.google.gson.annotations.SerializedName;
-import com.tarex.valdo.tarex.model.general.ListItem;
 
-import io.realm.RealmList;
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
@@ -31,8 +29,19 @@ public class Restaurant extends RealmObject {
     @SerializedName("avgPrice")
     private int avgPrice;
 
+    @SerializedName("urlPhoto")
+    private String urlPhoto;
+
     public int getAvgPrice() {
         return avgPrice;
+    }
+
+    public String getUrlPhoto() {
+        return urlPhoto;
+    }
+
+    public void setUrlPhoto(String urlPhoto) {
+        this.urlPhoto = urlPhoto;
     }
 
     public void setAvgPrice(int avgPrice) {

@@ -12,6 +12,8 @@ public class AppPreferencesHelper implements PreferencesHelper {
     private static final String PREF_KEY_CURRENT_USER_NAME = "PREF_KEY_CURRENT_USER_NAME";
     private static final String PREF_KEY_ACCESS_TOKEN = "PREF_KEY_ACCESS_TOKEN";
 
+
+
     private final SharedPreferences mPrefs;
 
 
@@ -19,6 +21,8 @@ public class AppPreferencesHelper implements PreferencesHelper {
                                String prefFileName) {
         mPrefs = context.getSharedPreferences(prefFileName, Context.MODE_PRIVATE);
     }
+
+
 
 
     @Override
@@ -38,6 +42,10 @@ public class AppPreferencesHelper implements PreferencesHelper {
 
     public void setCurrentUserName(String userName) {
         mPrefs.edit().putString(PREF_KEY_CURRENT_USER_NAME, userName).apply();
+    }
+
+    public SharedPreferences getmPrefs() {
+        return mPrefs;
     }
 
 

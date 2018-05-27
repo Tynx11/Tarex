@@ -17,4 +17,6 @@ public interface RestaurantListView extends MvpView {
 
     @StateStrategyType(OneExecutionStateStrategy.class)
     void handleError(Throwable error);
+
+    void showDetails(Restaurant item);
 }
