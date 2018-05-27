@@ -1,6 +1,8 @@
 package com.tarex.valdo.tarex.api;
 
 import com.tarex.valdo.tarex.forms.LoginForm;
+import com.tarex.valdo.tarex.forms.ReservationForm;
+import com.tarex.valdo.tarex.model.reservation.ReservationResponse;
 import com.tarex.valdo.tarex.model.restaurant.RestaurantResponse;
 import com.tarex.valdo.tarex.model.user.UserResponse;
 
@@ -18,7 +20,5 @@ public interface RestaurantService {
 
     @GET("restaurant/id/{restaurantId}")
     Single<RestaurantResponse> restaurant(@Path("restaurantId") Long id);
-
-
 
 }

@@ -28,7 +28,13 @@
             android:name=".ui.restaurantList.RestaurantListActivity">
         </activity>
 
-        <activity android:name=".ui.restaraunt.RestaurantActivity" ></activity>
+        <activity
+            android:name=".ui.restaraunt.RestaurantActivity" >
+        </activity>
+
+        <activity
+            android:name=".ui.reservation.ReservationActivity">
+        </activity>
 
     </application>
 

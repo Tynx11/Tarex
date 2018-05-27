@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,6 +17,7 @@ import com.arellomobile.mvp.presenter.PresenterType;
 import com.tarex.valdo.tarex.R;
 import com.tarex.valdo.tarex.model.restaurant.Restaurant;
 import com.tarex.valdo.tarex.ui.base.BaseActivity;
+import com.tarex.valdo.tarex.ui.reservation.ReservationActivity;
 import com.tarex.valdo.tarex.utils.ImageLoaderHelper;
 
 import static com.tarex.valdo.tarex.utils.Constants.ID_KEY;
@@ -35,11 +38,14 @@ public class RestaurantActivity extends BaseActivity implements RestaurantView {
 
     private ImageView iv_Photo;
 
+    private Button btnReservation;
+
     @InjectPresenter
     RestaurantPresenter presenter;
 
-
     private Long id;
+
+    private String restaurantName;
 
     public static void start(@NonNull Activity activity, @NonNull Restaurant restaurant) {
         Intent intent = new Intent(activity, RestaurantActivity.class);
@@ -54,6 +60,14 @@ public class RestaurantActivity extends BaseActivity implements RestaurantView {
         setContentView(R.layout.activity_restaraunt);
         initViews();
         id = getIntent().getLongExtra(ID_KEY, 0);
+        restaurantName = getIntent().getStringExtra(NAME_KEY);
+
+        btnReservation.setOnClickListener(view -> {
+            Intent intent = new Intent(RestaurantActivity.this, ReservationActivity.class);
+            intent.putExtra(NAME_KEY, restaurantName);
+            intent.putExtra(ID_KEY, id);
+            startActivity(intent);
+        });
     }
 
     private void initViews() {
@@ -68,6 +82,7 @@ public class RestaurantActivity extends BaseActivity implements RestaurantView {
        tvSunday = findViewById(R.id.tv_sunday);
        tvSaturday = findViewById(R.id.tv_saturday);
        iv_Photo = findViewById(R.id.iv_restaraunt);
+       btnReservation = findViewById(R.id.btn_reservation);
 
     }
 

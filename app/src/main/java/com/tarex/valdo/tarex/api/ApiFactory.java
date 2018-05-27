@@ -16,11 +16,10 @@ public final class ApiFactory {
 
     private static volatile RestaurantService restaurantService;
     private static volatile UserService userService;
+    private static volatile ReservationService reservationService;
 
     private ApiFactory () {
     }
-
-
 
     @NonNull
     public static UserService getUserService() {
@@ -30,6 +29,34 @@ public final class ApiFactory {
                 service = userService;
                 if (service == null) {
                     service = userService = buildRetrofit().create(UserService.class);
+                }
+            }
+        }
+        return service;
+    }
+
+    @NonNull
+    public static ReservationService getReservationService() {
+        ReservationService service = reservationService;
+        if (service == null) {
+            synchronized (ApiFactory.class) {
+                service = reservationService;
+                if (service == null) {
+                    service = reservationService = buildRetrofit().create(ReservationService.class);
+                }
+            }
+        }
+        return service;
+    }
+
+    @NonNull
+    public static RestaurantService getRestaurantService() {
+        RestaurantService service = restaurantService;
+        if (service == null) {
+            synchronized (ApiFactory.class) {
+                service = restaurantService;
+                if (service == null) {
+                    service = restaurantService = buildRetrofit().create(RestaurantService.class);
                 }
             }
         }
@@ -51,7 +78,6 @@ public final class ApiFactory {
                 .addInterceptor(new StethoInterceptor())
                 .addNetworkInterceptor(new StethoInterceptor())
                 .build();
-
     }
 
     private static OkHttpClient getClient() {
@@ -72,25 +98,11 @@ public final class ApiFactory {
         sClient = getClient();
         userService = buildRetrofit().create(UserService.class);
         restaurantService = buildRetrofit().create(RestaurantService.class);
+        reservationService = buildRetrofit().create(ReservationService.class);
     }
 
     public static void setUsersService(UserService userService) {
         ApiFactory.userService = userService;
     }
-
-    @NonNull
-    public static RestaurantService getRestaurantService() {
-        RestaurantService service = restaurantService;
-        if (service == null) {
-            synchronized (ApiFactory.class) {
-                service = restaurantService;
-                if (service == null) {
-                    service = restaurantService = buildRetrofit().create(RestaurantService.class);
-                }
-            }
-        }
-        return service;
-    }
-
 
 }

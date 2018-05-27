@@ -11,4 +11,14 @@ public interface PreferencesHelper {
     String getCurrentUserName();
 
     void setCurrentUserName(String userName);
+
+    String getCurrentPhoneNumber();
+
+    void setCurrentPhoneNumber(String phoneNumber);
+
+    String getCurrentUserSurname();
+
+    void   setCurrentUserSurname(String userSurname);
+
+
 }

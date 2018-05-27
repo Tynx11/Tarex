@@ -41,6 +41,7 @@
 
     <include layout="@layout/layout_restraunt"/>
     <Button
+        android:id="@+id/btn_reservation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center|bottom"

@@ -32,8 +32,6 @@ public class UserActivity extends BaseActivity implements UserView {
     @Override
     protected void onStart() {
         super.onStart();
-        if (presenter.getAccesToken(this,shName) != null);
-        restarauntIntent();
     }
 
     @Override
