@@ -20,16 +20,24 @@ public class Restaurant extends RealmObject {
     private String name;
 
     @SerializedName("address")
-    private Address address;
+     private Address address;
 
     @SerializedName("rating")
     private Rating rating;
 
-    @SerializedName("futuresList")
-    private RealmList<Boolean> futuresList;
-
     @SerializedName("description")
     private String description;
+
+    @SerializedName("avgPrice")
+    private int avgPrice;
+
+    public int getAvgPrice() {
+        return avgPrice;
+    }
+
+    public void setAvgPrice(int avgPrice) {
+        this.avgPrice = avgPrice;
+    }
 
     public void setId(Long id) {
         this.id = id;
@@ -57,7 +65,7 @@ public class Restaurant extends RealmObject {
 
     public void setAddress(Address address) {
         this.address = address;
-    }
+   }
 
     public Rating getRating() {
         return rating;
@@ -67,13 +75,6 @@ public class Restaurant extends RealmObject {
         this.rating = rating;
     }
 
-    public RealmList<Boolean> getFuturesList() {
-        return futuresList;
-    }
-
-    public void setFuturesList(RealmList<Boolean> futuresList) {
-        this.futuresList = futuresList;
-    }
 
     public String getDescription() {
         return description;

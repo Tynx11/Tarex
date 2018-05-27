@@ -16,9 +16,8 @@ public class RestaurantListPresenter extends MvpPresenter<RestaurantListView> {
     public void loadRestaurant() {
         RepositoryProvider.provideRestaurantRepository()
                 .restaurantList()
-                .subscribe(getViewState()::showItems,getViewState()::handleError);
+                .subscribe(
+                        getViewState()::showItems,getViewState()::handleError);
     }
-
-
 
 }

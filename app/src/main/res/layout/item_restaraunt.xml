@@ -65,13 +65,13 @@
                 android:layout_height="20dp"
                 android:layout_toEndOf="@id/iv_rybl_1"
                 android:layout_marginTop="@dimen/margin_medium"
-                android:src="@drawable/ryblyellow"/>
+                android:src="@drawable/ryblgrey"/>
             <ImageView
                 android:id="@+id/iv_rybl_3"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginTop="@dimen/margin_medium"
-                android:src="@drawable/ryblyellow"/>
+                android:src="@drawable/ryblgrey"/>
             <ImageView
                 android:id="@+id/iv_rybl_4"
                 android:layout_width="20dp"

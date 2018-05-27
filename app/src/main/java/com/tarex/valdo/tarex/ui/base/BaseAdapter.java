@@ -31,13 +31,13 @@ public abstract class BaseAdapter <T, VH extends RecyclerView.ViewHolder> extend
     };
 
     @Nullable
-    private EmptyStateRecyclerView recyclerView;
+    private RecyclerView recyclerView;
 
     public BaseAdapter(@NonNull List<T> items) {
         this.items.addAll(items);
     }
 
-    public void attachToRecyclerView(@NonNull EmptyStateRecyclerView recyclerView) {
+    public void attachToRecyclerView(@NonNull RecyclerView recyclerView) {
         this.recyclerView = recyclerView;
         this.recyclerView.setAdapter(this);
         refreshRecycler();
@@ -69,7 +69,7 @@ public abstract class BaseAdapter <T, VH extends RecyclerView.ViewHolder> extend
     protected void refreshRecycler() {
         notifyDataSetChanged();
         if (recyclerView != null) {
-            recyclerView.checkIfEmpty();
+       //     recyclerView.checkIfEmpty();
         }
     }
 

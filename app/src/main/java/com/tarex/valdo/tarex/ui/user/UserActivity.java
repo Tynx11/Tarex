@@ -2,7 +2,6 @@ package com.tarex.valdo.tarex.ui.user;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,7 +12,7 @@ import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.tarex.valdo.tarex.R;
 import com.tarex.valdo.tarex.ui.base.BaseActivity;
 import com.tarex.valdo.tarex.ui.registration.RegistrationActivity;
-import com.tarex.valdo.tarex.ui.restaurantList.RestautantListActivity;
+import com.tarex.valdo.tarex.ui.restaurantList.RestaurantListActivity;
 
 public class UserActivity extends BaseActivity implements UserView {
 
@@ -43,7 +42,7 @@ public class UserActivity extends BaseActivity implements UserView {
         tvLoginWithoutAuth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(UserActivity.this, RestautantListActivity.class);
+                Intent intent = new Intent(UserActivity.this, RestaurantListActivity.class);
                 startActivity(intent);
             }
         });

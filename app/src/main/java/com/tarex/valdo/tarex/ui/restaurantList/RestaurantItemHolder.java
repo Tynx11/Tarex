@@ -13,6 +13,12 @@ import com.tarex.valdo.tarex.model.restaurant.Restaurant;
 public class RestaurantItemHolder extends RecyclerView.ViewHolder {
     private TextView restName;
     private TextView shortDesrciption;
+    private ImageView price1;
+    private ImageView price2;
+    private ImageView price3;
+    private ImageView price4;
+    private ImageView price5;
+
 
     @NonNull
     public static RestaurantItemHolder create(@NonNull Context context) {
@@ -25,10 +31,31 @@ public class RestaurantItemHolder extends RecyclerView.ViewHolder {
         super(itemView);
         restName = itemView.findViewById(R.id.tv_name);
         shortDesrciption = itemView.findViewById(R.id.tv_description);
+        price1 = itemView.findViewById(R.id.iv_rybl_1);
+        price2 = itemView.findViewById(R.id.iv_rybl_2);
+        price3 = itemView.findViewById(R.id.iv_rybl_3);
+        price4 = itemView.findViewById(R.id.iv_rybl_4);
+        price5 = itemView.findViewById(R.id.iv_rybl_5);
     }
 
     public void bind(@NonNull Restaurant item) {
-    restName.setText(item.getName());
-    shortDesrciption.setText(item.getDescription());
+        restName.setText(item.getName());
+        shortDesrciption.setText(item.getDescription());
+        if (item.getAvgPrice() > 300 ) {
+            price2.setImageResource(R.drawable.ryblyellow);
+            if (item.getAvgPrice() > 600 ) {
+                price3.setImageResource(R.drawable.ryblyellow);
+                if (item.getAvgPrice() > 1000) {
+                    price4.setImageResource(R.drawable.ryblyellow);
+                    if (item.getAvgPrice() > 1500) {
+                        price5.setImageResource(R.drawable.ryblyellow);
+                    }
+                }
+            }
+
+
+        }
+
+
     }
 }

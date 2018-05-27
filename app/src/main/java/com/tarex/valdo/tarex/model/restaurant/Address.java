@@ -10,12 +10,12 @@ import io.realm.annotations.PrimaryKey;
 
 public class Address extends RealmObject {
 
-    @PrimaryKey
+
     @SerializedName("id")
     private Long id;
 
     @SerializedName("restaurant")
-    private RealmList<Restaurant> restaurant;
+    private Long restaurant;
 
     @SerializedName("city")
     private String city;
@@ -34,11 +34,11 @@ public class Address extends RealmObject {
         this.id = id;
     }
 
-    public RealmList<Restaurant> getRestaurant() {
+    public Long getRestaurant() {
         return restaurant;
     }
 
-    public void setRestaurant(RealmList<Restaurant> restaurant) {
+    public void setRestaurant(Long restaurant) {
         this.restaurant = restaurant;
     }
 

@@ -49,6 +49,7 @@ public final class ApiFactory {
                 //.addInterceptor(ApiKeyInterceptor.create)
                 .addInterceptor(LoggingInterceptor.create())
                 .addInterceptor(new StethoInterceptor())
+                .addNetworkInterceptor(new StethoInterceptor())
                 .build();
 
     }
@@ -70,6 +71,7 @@ public final class ApiFactory {
         sClient = null;
         sClient = getClient();
         userService = buildRetrofit().create(UserService.class);
+        restaurantService = buildRetrofit().create(RestaurantService.class);
     }
 
     public static void setUsersService(UserService userService) {

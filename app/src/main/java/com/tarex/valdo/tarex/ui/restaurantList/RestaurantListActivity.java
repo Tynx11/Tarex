@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.arellomobile.mvp.presenter.InjectPresenter;
@@ -17,7 +18,7 @@ import com.tarex.valdo.tarex.widget.EmptyStateRecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RestautantListActivity extends BaseActivity implements RestaurantListView,BaseAdapter.OnItemClickListener<Restaurant> {
+public class RestaurantListActivity extends BaseActivity implements RestaurantListView,BaseAdapter.OnItemClickListener<Restaurant> {
 
     RecyclerView recyclerView;
 
@@ -30,7 +31,6 @@ public class RestautantListActivity extends BaseActivity implements RestaurantLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant_list);
-        recyclerView = findViewById(R.id.rv);
         initRecycler();
     }
 
@@ -50,11 +50,14 @@ public class RestautantListActivity extends BaseActivity implements RestaurantLi
         error.printStackTrace();
     }
     private void initRecycler() {
+        recyclerView = findViewById(R.id.rv);
         adapter = new RestaurantAdapter(new ArrayList<>());
-        adapter.setOnItemClickListener(this);
         LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(manager);
-        recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);
+        adapter.attachToRecyclerView(recyclerView);
+        adapter.setOnItemClickListener(this);
+        recyclerView.setAdapter(adapter);
+
     }
 }

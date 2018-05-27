@@ -1,24 +1,22 @@
 package com.tarex.valdo.tarex.model.restaurant;
 
 import com.google.gson.annotations.SerializedName;
-import com.tarex.valdo.tarex.model.general.ListItem;
 
 import java.util.List;
 
 import io.realm.RealmList;
 import io.realm.RealmObject;
-import io.realm.annotations.PrimaryKey;
 
-public class RestaurantResponse extends RealmObject {
+public class RestaurantResponse  {
 
     @SerializedName("restaurants")
-    private RealmList<Restaurant> restaurant;
+    private List<Restaurant> restaurants;
 
-    public RealmList<Restaurant> getRestaurant() {
-        return restaurant;
+    public List<Restaurant> getRestaurants() {
+        return restaurants;
     }
 
-    public void setRestaurant(RealmList<Restaurant> restaurant) {
-        this.restaurant = restaurant;
+    public void setRestaurants(List<Restaurant> restaurants) {
+        this.restaurants = restaurants;
     }
 }

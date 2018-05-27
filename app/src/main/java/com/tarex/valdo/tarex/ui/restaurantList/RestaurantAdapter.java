@@ -14,6 +14,7 @@ public class RestaurantAdapter extends BaseAdapter<Restaurant,RestaurantItemHold
         super(items);
     }
 
+
     @Override
     public RestaurantItemHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return RestaurantItemHolder.create(parent.getContext());

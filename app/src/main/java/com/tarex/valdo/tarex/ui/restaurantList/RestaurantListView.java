@@ -10,7 +10,7 @@ import com.tarex.valdo.tarex.model.restaurant.Restaurant;
 
 import java.util.List;
 
-@StateStrategyType(AddToEndSingleStrategy.class)
+
 public interface RestaurantListView extends MvpView {
 
     void showItems(@NonNull List<Restaurant> items);
