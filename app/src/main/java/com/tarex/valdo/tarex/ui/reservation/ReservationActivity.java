@@ -69,6 +69,8 @@ public class ReservationActivity extends BaseActivity implements ReservationView
             if (Integer.parseInt(countPeople.getText().toString())<15) {
                 presenter.reservation(presenter.getAccesToken(this, "shPref"), id, reservTime, reservDate, Integer.parseInt(countPeople.getText().toString()), description.getText().toString());
                 Intent intent = new Intent(getApplicationContext(), RestaurantListActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
             } else {
                 Toast.makeText(this,"Количество людей не может быть больше 15",Toast.LENGTH_LONG).show();
