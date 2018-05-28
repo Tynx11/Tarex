@@ -22,7 +22,7 @@ public class RestaurantPresenter extends MvpPresenter<RestaurantView> {
                     getViewState().setDescription(restaurant);
                     getViewState().setImage(restaurant);
                     getViewState().setPlace(restaurant);
-                    //getViewState().setFutures;
+                   // getViewState().setFutures(restaurant);
                     //getViewState().setRestaurantMenu(restaurant);
                     //getViewState().set
                 });

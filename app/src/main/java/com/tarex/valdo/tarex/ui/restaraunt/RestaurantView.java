@@ -15,5 +15,5 @@ public interface RestaurantView extends MvpView {
 
     void setPlace (Restaurant restaurant);
 
-
+    //void setFutures(Restaurant restaurant);
 }
