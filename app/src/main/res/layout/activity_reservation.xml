@@ -25,22 +25,37 @@
         android:layout_marginStart="@dimen/margin_medium"
         android:layout_marginEnd="@dimen/margin_medium"
         tools:text="Дата брони: " />
-    <Button
-        android:id="@+id/btn_pick_date"
+
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_medium"
-        android:layout_marginEnd="@dimen/margin_medium"
-        android:text="Выбрать дату"
-        style="@style/Base.Widget.AppCompat.Button.Colored"/>
-    <Button
-        android:id="@+id/btn_pick_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_medium"
-        android:layout_marginEnd="@dimen/margin_medium"
-        android:text="Выбрать время"
-        style="@style/Base.Widget.AppCompat.Button.Colored" />
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_pick_date"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:text="Выбрать дату" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/countPeople"
+            android:layout_toRightOf="@id/btn_pick_date"
+            android:hint="количество людей"/>
+
+        <Button
+            android:id="@+id/btn_pick_time"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_pick_date"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:text="Выбрать время" />
+    </RelativeLayout>
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="150dp"
@@ -49,6 +64,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/et_description"
             android:layout_margin="@dimen/margin_medium"
             android:hint="Введите комментарий к бронированию"
             android:background="@android:color/transparent"

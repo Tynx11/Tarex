@@ -19,8 +19,8 @@ public class ReservationPresenter extends MvpPresenter<ReservationView> {
     }
 
     @SuppressLint("CheckResult")
-    public void reservation(String token, Long restaurantId, String time, String day) {
-        ReservationForm reservationForm = new ReservationForm(token, restaurantId, time, day);
+    public void reservation(String token, Long restaurantId, String time, String day, int countPeople, String description) {
+        ReservationForm reservationForm = new ReservationForm(token, restaurantId, time, day,countPeople,description);
         ApiFactory.getReservationService()
                 .reservation(reservationForm)
                 .compose(RxUtils.asyncSingle())

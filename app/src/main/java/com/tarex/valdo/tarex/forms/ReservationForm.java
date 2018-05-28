@@ -19,12 +19,16 @@ public class ReservationForm {
     @SerializedName("countPeople")
     int countPeople;
 
-    public ReservationForm(String userToken, Long restaurantId, String time, String day) {
+    @SerializedName("description")
+    String description;
+
+    public ReservationForm(String userToken, Long restaurantId, String time, String day, int countPeople, String description) {
         this.userToken = userToken;
         this.restaurantId = restaurantId;
         this.time = time;
         this.day = day;
-        ;
+        this.countPeople = countPeople;
+        this.description = description;
     }
 
     public String getUserToken() {
@@ -65,5 +69,13 @@ public class ReservationForm {
 
     public void setCountPeople(int countPeople) {
         this.countPeople = countPeople;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
