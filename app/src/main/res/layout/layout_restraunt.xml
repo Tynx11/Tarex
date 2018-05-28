@@ -304,23 +304,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/lorem_ipsum"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/text_large"
-            android:text="Фото"/>
-
-        <LinearLayout
-            android:id="@+id/ll_photo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_medium"
-            android:orientation="horizontal">
-
-        </LinearLayout>
-
-
-
 
         <ProgressBar
             android:id="@+id/progress_loader"

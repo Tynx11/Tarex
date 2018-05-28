@@ -20,4 +20,17 @@
     <string name="your_phone_number">Ваш номер телефона</string>
     <string name="register">зарегистрироваться</string>
     <string name="your_password">Ваш пароль</string>
+    <string name="clear_toolbar">Очистить список</string>
+
+    <integer-array name="countPeople">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </integer-array>
 </resources>

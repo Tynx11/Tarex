@@ -7,18 +7,25 @@ import android.app.DialogFragment;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.format.DateUtils;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.tarex.valdo.tarex.R;
 import com.tarex.valdo.tarex.ui.base.BaseActivity;
 import com.tarex.valdo.tarex.ui.restaraunt.RestaurantView;
+import com.tarex.valdo.tarex.ui.restaurantList.RestaurantListActivity;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -33,6 +40,8 @@ public class ReservationActivity extends BaseActivity implements ReservationView
     Button btnPickTime;
     Button btnLetsReserv;
     TextView choosenTime;
+    EditText description;
+    EditText countPeople;
 
     Calendar dateAndTime;
 
@@ -54,10 +63,16 @@ public class ReservationActivity extends BaseActivity implements ReservationView
         id = getIntent().getLongExtra(ID_KEY,0);
         restaurantName = getIntent().getStringExtra(NAME_KEY);
         dateAndTime=Calendar.getInstance();
+        countPeople.setInputType(InputType.TYPE_CLASS_NUMBER);
 
         btnLetsReserv.setOnClickListener(view -> {
-            presenter.reservation(presenter.getAccesToken(this,"shPref"),id,reservTime,reservDate);
-
+            if (Integer.parseInt(countPeople.getText().toString())<15) {
+                presenter.reservation(presenter.getAccesToken(this, "shPref"), id, reservTime, reservDate, Integer.parseInt(countPeople.getText().toString()), description.getText().toString());
+                Intent intent = new Intent(getApplicationContext(), RestaurantListActivity.class);
+                startActivity(intent);
+            } else {
+                Toast.makeText(this,"Количество людей не может быть больше 15",Toast.LENGTH_LONG).show();
+            }
         });
 
         btnPickTime.setOnClickListener(view -> {
@@ -119,6 +134,8 @@ public class ReservationActivity extends BaseActivity implements ReservationView
         btnPickTime = findViewById(R.id.btn_pick_time);
         choosenTime = findViewById(R.id.tv_choosen_time);
         btnLetsReserv = findViewById(R.id.btn_lets_reserv);
+        description = findViewById(R.id.et_description);
+        countPeople = findViewById(R.id.countPeople);
     }
 
     @Override
