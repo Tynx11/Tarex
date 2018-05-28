@@ -1,8 +1,5 @@
 package com.tarex.valdo.tarex.utils;
 
-/**
- * Created by Nail Shaykhraziev on 25.02.2018.
- */
 
 public final class Constants {
 

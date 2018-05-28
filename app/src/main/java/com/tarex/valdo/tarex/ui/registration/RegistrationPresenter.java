@@ -42,4 +42,5 @@ public class RegistrationPresenter extends MvpPresenter<RegistrationView> {
         getViewState().getSpToken(appPreferencesHelper.getAccessToken());
 
     }
+
 }

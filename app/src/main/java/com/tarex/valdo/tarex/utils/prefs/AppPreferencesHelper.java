@@ -66,5 +66,4 @@ public class AppPreferencesHelper implements PreferencesHelper {
     }
 
 
-
 }

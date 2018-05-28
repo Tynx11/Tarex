@@ -6,6 +6,7 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.format.DateUtils;
@@ -30,6 +31,8 @@ import com.tarex.valdo.tarex.ui.restaurantList.RestaurantListActivity;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Formatter;
 
 import static com.tarex.valdo.tarex.utils.Constants.ID_KEY;
 import static com.tarex.valdo.tarex.utils.Constants.NAME_KEY;
@@ -44,36 +47,47 @@ public class ReservationActivity extends BaseActivity implements ReservationView
     EditText countPeople;
 
     Calendar dateAndTime;
+    Calendar currentDate;
 
     private String restaurantName;
     private Long id;
     private String reservTime;
     private String reservDate;
     private String token;
-
+    private String currentDateandTime;
     @InjectPresenter
     ReservationPresenter presenter;
 
-    /** Called when the activity is first created. */
+    /**
+     * Called when the activity is first created.
+     */
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservation);
         init();
-        id = getIntent().getLongExtra(ID_KEY,0);
+        id = getIntent().getLongExtra(ID_KEY, 0);
         restaurantName = getIntent().getStringExtra(NAME_KEY);
-        dateAndTime=Calendar.getInstance();
+        currentDate = Calendar.getInstance();
+        dateAndTime = Calendar.getInstance();
         countPeople.setInputType(InputType.TYPE_CLASS_NUMBER);
-
+        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm");
+        choosenTime.setText(currentDateandTime);
         btnLetsReserv.setOnClickListener(view -> {
-            if (Integer.parseInt(countPeople.getText().toString())<15) {
-                presenter.reservation(presenter.getAccesToken(this, "shPref"), id, reservTime, reservDate, Integer.parseInt(countPeople.getText().toString()), description.getText().toString());
-                Intent intent = new Intent(getApplicationContext(), RestaurantListActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                        .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
+
+            if (dateAndTime.after(currentDate)) {
+                if (Integer.parseInt(countPeople.getText().toString()) < 15) {
+                    presenter.reservation(presenter.getAccesToken(this, "shPref"), id, reservTime, reservDate, Integer.parseInt(countPeople.getText().toString()), description.getText().toString());
+                    Intent intent = new Intent(getApplicationContext(), RestaurantListActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                            .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(this, "Количество людей не может быть больше 15", Toast.LENGTH_LONG).show();
+                }
             } else {
-                Toast.makeText(this,"Количество людей не может быть больше 15",Toast.LENGTH_LONG).show();
+                choosenTime.setText("Дата введена неверно");
+                choosenTime.setTextColor(Color.RED);
             }
         });
 
@@ -82,7 +96,7 @@ public class ReservationActivity extends BaseActivity implements ReservationView
             setTime(view);
         });
 
-        btnPickDate.setOnClickListener(view ->  {
+        btnPickDate.setOnClickListener(view -> {
 
             setDate(view);
         });
@@ -108,7 +122,7 @@ public class ReservationActivity extends BaseActivity implements ReservationView
 
 
     // установка обработчика выбора времени
-    TimePickerDialog.OnTimeSetListener t=new TimePickerDialog.OnTimeSetListener() {
+    TimePickerDialog.OnTimeSetListener t = new TimePickerDialog.OnTimeSetListener() {
         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
             dateAndTime.set(Calendar.HOUR_OF_DAY, hourOfDay);
             dateAndTime.set(Calendar.MINUTE, minute);
@@ -117,7 +131,7 @@ public class ReservationActivity extends BaseActivity implements ReservationView
     };
 
     // установка обработчика выбора даты
-    DatePickerDialog.OnDateSetListener d=new DatePickerDialog.OnDateSetListener() {
+    DatePickerDialog.OnDateSetListener d = new DatePickerDialog.OnDateSetListener() {
         public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
             dateAndTime.set(Calendar.YEAR, year);
             dateAndTime.set(Calendar.MONTH, monthOfYear);
@@ -126,12 +140,13 @@ public class ReservationActivity extends BaseActivity implements ReservationView
             DateFormat timeFormat = new SimpleDateFormat("HH:mm");
             reservDate = df.format(dateAndTime.getTime());
             reservTime = timeFormat.format(dateAndTime.getTime());
-            choosenTime.setText(reservDate);
+            choosenTime.setText(reservDate + " " + reservTime);
+
 
         }
     };
 
-    private void init () {
+    private void init() {
         btnPickDate = findViewById(R.id.btn_pick_date);
         btnPickTime = findViewById(R.id.btn_pick_time);
         choosenTime = findViewById(R.id.tv_choosen_time);
