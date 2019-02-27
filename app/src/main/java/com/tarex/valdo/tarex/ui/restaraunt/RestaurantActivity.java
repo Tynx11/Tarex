@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.arellomobile.mvp.presenter.PresenterType;
 import com.tarex.valdo.tarex.R;
+import com.tarex.valdo.tarex.model.general.Image;
 import com.tarex.valdo.tarex.model.restaurant.Restaurant;
 import com.tarex.valdo.tarex.ui.base.BaseActivity;
 import com.tarex.valdo.tarex.ui.reservation.ReservationActivity;
@@ -36,6 +37,10 @@ public class RestaurantActivity extends BaseActivity implements RestaurantView {
     private TextView tvSunday;
     private TextView tvSaturday;
 
+    private ImageView iv_dance;
+    private ImageView iv_hookah;
+    private ImageView iv_baby;
+    private ImageView iv_wifi;
     private ImageView iv_Photo;
 
     private Button btnReservation;
@@ -84,6 +89,10 @@ public class RestaurantActivity extends BaseActivity implements RestaurantView {
        iv_Photo = findViewById(R.id.iv_restaraunt);
        btnReservation = findViewById(R.id.btn_reservation);
 
+       iv_baby = findViewById(R.id.iv_baby);
+       iv_dance = findViewById(R.id.iv_dance);
+       iv_hookah = findViewById(R.id.iv_hookah);
+       iv_wifi = findViewById(R.id.iv_wifi);
     }
 
     @Override

@@ -228,74 +228,33 @@
                 android:layout_marginTop="@dimen/margin_medium">
 
                 <ImageView
-                    android:id="@+id/iv_average_bill"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ryblgrey"
-                    android:layout_centerHorizontal="true"/>
+                    android:id="@+id/iv_wifi"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/wifi"
+                    android:layout_centerHorizontal="true" />
                 <ImageView
-                    android:id="@+id/iv_kitchen"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_toRightOf="@id/iv_average_bill"
-                    android:src="@drawable/ryblgrey"
-                    android:layout_centerHorizontal="true"/>
-                <ImageView
-                    android:id="@+id/iv_kitchen_2"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_toRightOf="@id/iv_kitchen"
-                    android:src="@drawable/ryblgrey"
-                    android:layout_centerHorizontal="true"/>
-                <ImageView
-                    android:id="@+id/iv_buisness_lunch"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_toRightOf="@id/iv_kitchen_2"
-                    android:src="@drawable/ryblgrey"
-                    android:layout_centerHorizontal="true"/>
-                <ImageView
-                    android:id="@+id/iv_live_music"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_toRightOf="@id/iv_buisness_lunch"
-                    android:src="@drawable/ryblyellow"
-                    />
-                <ImageView
-                    android:id="@+id/iv_summer_place"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ryblgrey" />
-                <ImageView
-                    android:id="@+id/iv_bar_map"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_toRightOf="@id/iv_summer_place"
-                    android:src="@drawable/ryblgrey" />
-                <ImageView
-                    android:id="@+id/iv_club"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_toRightOf="@id/iv_bar_map"
-                    android:src="@drawable/ryblgrey" />
-                <ImageView
-                    android:id="@+id/iv_dance"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_toRightOf="@id/iv_club"
-                    android:src="@drawable/ryblgrey" />
-                <ImageView
-                    android:id="@+id/iv_snack"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_toRightOf="@id/iv_dance"
-                    android:src="@drawable/ryblyellow" />
+                    android:id="@+id/iv_baby"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_toRightOf="@id/iv_wifi"
+                    android:src="@drawable/baby"
+                    android:layout_centerHorizontal="true" />
                 <ImageView
                     android:id="@+id/iv_hookah"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_toRightOf="@id/iv_snack"
-                    android:src="@drawable/ryblgrey" />
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_toRightOf="@id/iv_baby"
+                    android:src="@drawable/hookah"
+                    android:layout_centerHorizontal="true" />
+                <ImageView
+                    android:id="@+id/iv_dance"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_toRightOf="@id/iv_hookah"
+                    android:src="@drawable/dance"
+                    android:layout_centerHorizontal="true"
+                    />
             </LinearLayout>
         </HorizontalScrollView>
 

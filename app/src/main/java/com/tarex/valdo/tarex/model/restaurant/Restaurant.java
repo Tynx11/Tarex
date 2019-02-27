@@ -2,6 +2,8 @@ package com.tarex.valdo.tarex.model.restaurant;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
